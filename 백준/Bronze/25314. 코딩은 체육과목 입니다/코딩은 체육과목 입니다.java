@@ -1,24 +1,24 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
-    public static void main(String[] args) {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        try {
-            int i = Integer.parseInt(br.readLine());
-            int a = i/4;
-            for (int j = 0; j < a; j++) {
-                bw.write("long ");
-                if (j == a-1) {
-                    bw.write("int\n");
-                }
-            }
-            bw.flush();
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
+		int num = Integer.parseInt(br.readLine());
+		int longCount = num / 4;
+		
+		for (int i = 0; i < longCount; i++) {
+			bw.write("long ");
+		}
+		bw.write("int\n");
+		bw.flush();
+		bw.close();
+	}
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
