@@ -11,7 +11,7 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		while(true) {
-			String s[] = br.readLine().split(" ");
+			String[] s = br.readLine().split(" ");
 			int a = Integer.parseInt(s[0]);
 			int b = Integer.parseInt(s[1]);
 			if (
